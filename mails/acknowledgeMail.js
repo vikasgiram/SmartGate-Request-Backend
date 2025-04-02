@@ -1,9 +1,10 @@
+const config = require("../utils/config");
 const transporter = require("./transporter");
 
 exports.acknowledgeMail = async (name, email) => {
   try {
     const mailOptions = {
-        from: process.env.EMAIL,
+        from: config.email,
         to: email,
         subject: "Acknowledgment of your request",
         text: `Hello ${name},\n\nThank you for your request. We have received it and will get back to you shortly.\n\nBest regards,\nSmart Gate Team`,

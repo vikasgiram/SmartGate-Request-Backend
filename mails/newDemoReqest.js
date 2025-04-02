@@ -1,9 +1,10 @@
+const config = require("../utils/config");
 const transporter = require("./transporter");
 
 const newRequstMail = async (data) => {
     try {
         const mailOptions = {
-            from: process.env.EMAIL,
+            from: config.email,
             to: 'designer@daccess.co',
             subject: "New Demo Request for Smart Gate",
             text: `New Request from ${data.name}.\n\nDetails:\nEmail: ${data.email}\nPhone: ${data.phone} \nOrginazation: ${data.organization}\nMessage: ${data.message}`,

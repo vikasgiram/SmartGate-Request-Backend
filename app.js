@@ -11,7 +11,7 @@ const validateRequest = require('./utils/validator.js');
 connectDB();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT =5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
