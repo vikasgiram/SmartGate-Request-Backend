@@ -4,7 +4,7 @@ const newRequstMail = async (data) => {
     try {
         const mailOptions = {
             from: process.env.EMAIL,
-            to: 'vikas@daccess.co',
+            to: 'designer@daccess.co',
             subject: "New Demo Request for Smart Gate",
             text: `New Request from ${data.name}.\n\nDetails:\nEmail: ${data.email}\nPhone: ${data.phone} \nOrginazation: ${data.organization}\nMessage: ${data.message}`,
         };

@@ -39,11 +39,11 @@ const requestSchema = new mongoose.Schema({
         maxlength: 500,
         minlength: 10,
     },
-    offerings: {
+    offerings: [{
         type: String,
         required: true,
-        enum: ['Smart Gate', 'Mobile/Face-based Access Control', 'Visitor management'],
-    },
+        enum: ['Ai-based Video Analytics','Identity-based People Flow', 'Mobile/Face-based Access Control', 'Visitor management'],
+    }],
     
 },{timestamps: true});
 

@@ -22,14 +22,14 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/request', async (req, res) => {
-    const { firstName, lastName, email, organization, phone, message } = req.body;
+    const { firstName, lastName, email, organization, phone, offerings, message } = req.body;
     try {
         const { errors, isValid } = validateRequest({ firstName, lastName, email, organization, phone, message });
         if (!isValid) {
             return res.status(400).json({ errors });
         }
-        
-        const request = new Request({ firstName , lastName, organization, email, phone, message });
+
+        const request = new Request({ firstName , lastName,offerings, organization, email, phone, message });
         await request.save();
         await acknowledgeMail(firstName, email);
         await newRequstMail({ name: `${firstName} ${lastName}`, email,organization, phone, message });
