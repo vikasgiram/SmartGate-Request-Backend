@@ -6,12 +6,14 @@ const requestSchema = new mongoose.Schema({
         required: true,
         maxlength: 20,
         minlength: 3,
+        match: /^[a-zA-Z]+$/
     },
     lastName: {
         type: String,
         required: true,
         maxlength: 20,
         minlength: 3,
+        match: /^[a-zA-Z]+$/
     },
     email: {
         type: String,
@@ -25,6 +27,7 @@ const requestSchema = new mongoose.Schema({
         type: String,
         required: true,
         maxlength: 50,
+        match: /^[a-zA-Z0-9\s]+$/
     },
     phone: {
         type: String,
@@ -38,6 +41,7 @@ const requestSchema = new mongoose.Schema({
         required: true,
         maxlength: 500,
         minlength: 10,
+        match: /^[a-zA-Z0-9\s.,!?]+$/
     },
     offerings: [{
         type: String,
