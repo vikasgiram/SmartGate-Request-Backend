@@ -19,7 +19,7 @@ exports.createRequest = async (req, res) => {
         const request = new Request({ firstName , lastName,offerings, organization, email, phone, message });
         await request.save();
         await acknowledgeMail(firstName, email);
-        await newRequstMail({ name: `${firstName} ${lastName}`, email,organization, phone, message });
+        await newRequstMail({ firstName, lastName, email,organization, phone, message });
         res.status(201).json({ message: 'Request submitted successfully' });
     } catch (error) {
         res.status(400).json({ message: 'Error submitting request', error: error.message });
